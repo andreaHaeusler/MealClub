@@ -1,4 +1,8 @@
 MealClub::Application.routes.draw do |map|
+  resources :meals
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
