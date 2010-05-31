@@ -12,7 +12,7 @@
 
 <% @meals.each do |meal| %>
   <tr>
-    <td><%= meal.date.strftime("%A %d %B %Y") %></td>
+    <td><%= meal.date.strftime("%A %d %B %Y") if (!meal.date.nil?) %></td>
     <td><%= "€%.2f" % meal.cost %></td>
     <td><%= meal.description %></td>
     <td><%= link_to 'Show', meal %></td>

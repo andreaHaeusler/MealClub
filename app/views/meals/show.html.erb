@@ -2,7 +2,7 @@
 
 <p>
   <b>Date:</b>
-  <%= @meal.date.strftime("%A %d %B %Y") %>
+  <%= @meal.date.strftime("%A %d %B %Y") if (!@meal.date.nil?) %>
 </p>
 
 <p>
