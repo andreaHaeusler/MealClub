@@ -15,6 +15,13 @@
   <%= @meal.description %>
 </p>
 
+<h2>Cooks</h2>
+<% @meal.cooks.each do |cook| %>
+<p>
+	<b>Cook:</b>  <%= cook.name %>
+</p>
+<% end %> 
+
 <h2>Add a cook:</h2>
 
 <%= form_for :cook, @new_cook, :url => meal_cooks_path(@meal) do |f| %>
@@ -27,6 +34,8 @@
 	<%= f.submit %>
 	</div>
 <% end %> 
+
+<h2>Add a guest:</h2>
 
 <%= form_for :guest, @new_guest, :url => meal_guests_path(@meal) do |f| %>
 	<%= f.error_messages %>
