@@ -35,6 +35,13 @@
 	</div>
 <% end %> 
 
+<h2>Guests</h2>
+<% @meal.guests.each do |guest| %>
+<p>
+	<b>Guest:</b>  <%= guest.name %>
+</p>
+<% end %>
+
 <h2>Add a guest:</h2>
 
 <%= form_for :guest, @new_guest, :url => meal_guests_path(@meal) do |f| %>
