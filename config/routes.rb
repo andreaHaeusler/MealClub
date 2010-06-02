@@ -1,5 +1,8 @@
 MealClub::Application.routes.draw do |map|
-  resources :meals
+  resources :meals do
+    resources :cooks
+    resources :guests
+  end
 
   root :to => "home#index"
 

@@ -14,6 +14,8 @@ class MealsController < ApplicationController
   # GET /meals/1.xml
   def show
     @meal = Meal.find(params[:id])
+    @new_cook = @meal.cooks.build
+    @new_guest = @meal.guests.build
 
     respond_to do |format|
       format.html # show.html.erb

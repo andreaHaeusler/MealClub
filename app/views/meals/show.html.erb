@@ -15,6 +15,29 @@
   <%= @meal.description %>
 </p>
 
+<h2>Add a cook:</h2>
+
+<%= form_for :cook, @new_cook, :url => meal_cooks_path(@meal) do |f| %>
+	<%= f.error_messages %>
+	<div class="field">
+	<%= f.label :name %><br />
+	<%= f.text_field :name %>
+	</div>
+	<div class="actions">
+	<%= f.submit %>
+	</div>
+<% end %> 
+
+<%= form_for :guest, @new_guest, :url => meal_guests_path(@meal) do |f| %>
+	<%= f.error_messages %>
+	<div class="field">
+	<%= f.label :name %><br />
+	<%= f.text_field :name %>
+	</div>
+	<div class="actions">
+	<%= f.submit %>
+	</div>
+<% end %>
 
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>
